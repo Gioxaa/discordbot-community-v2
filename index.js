@@ -39,6 +39,23 @@ for (const file of commandFiles) {
   client.commands.set(commandName, command);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Handler untuk semua jenis interaksi
 client.on('interactionCreate', async interaction => {
   try {
