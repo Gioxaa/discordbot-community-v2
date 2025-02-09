@@ -23,7 +23,7 @@ module.exports = {
         .setColor('#FF0000')
         .setTitle('🚫 Restricted Access')
         .setDescription(`**This command can only be used in:**\n<#${process.env.CUSTOM_ROLE_CHANNEL_ID}>`)
-        .setThumbnail('https://i.imgur.com/X8vB9PU.png');
+        .setThumbnail(interaction.client.user.displayAvatarURL());
       
       return interaction.editReply({ embeds: [channelErrorEmbed] });
     }
@@ -58,7 +58,7 @@ module.exports = {
         .setColor('#FFD700')
         .setTitle('⚠️ Custom Role Already Exists')
         .setDescription('```fix\nYou have already created a custom role! You can only have one custom role.\n```')
-        .setThumbnail('https://i.imgur.com/9n1qF3x.png')
+        .setThumbnail(interaction.client.user.displayAvatarURL())
         .setFooter({ text: 'Remove your current role to create a new one', iconURL: interaction.user.displayAvatarURL() });
       
       return interaction.editReply({ embeds: [alreadyExistsEmbed] });
@@ -74,7 +74,7 @@ module.exports = {
         .setColor('#FF0000')
         .setTitle('❌ Invalid Color Format')
         .setDescription('```fix\nPlease provide a valid hex color code, e.g. FF5733\n```')
-        .setThumbnail('https://i.imgur.com/X8vB9PU.png');
+        .setThumbnail(interaction.client.user.displayAvatarURL());
       
       return interaction.editReply({ embeds: [colorErrorEmbed] });
     }
@@ -139,7 +139,7 @@ module.exports = {
       if (roleIcon) {
         successEmbed.setThumbnail(roleIcon);
       } else {
-        successEmbed.setThumbnail('https://i.imgur.com/Z7eYd3H.png');
+        successEmbed.setThumbnail(interaction.client.user.displayAvatarURL());
       }
 
       // Optional: Add an action row with a support button for extra flair

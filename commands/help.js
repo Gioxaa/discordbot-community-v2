@@ -60,7 +60,7 @@ module.exports = {
             '**Explore my command galaxy**',
             '▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
           ].join('\n'))
-          .setThumbnail('https://i.imgur.com/St4T7vQ.png')
+          .setThumbnail(interaction.client.user.displayAvatarURL()) // Set bot profile picture as thumbnail
           .addFields({
             name: 'Commands',
             value: category.commands.map(cmd => `✦ \`${cmd.name}\` – ${cmd.description}`).join('\n'),
